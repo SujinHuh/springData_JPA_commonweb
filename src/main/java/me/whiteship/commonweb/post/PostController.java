@@ -24,10 +24,10 @@ public class PostController {
         return post.getTitle();
     }
 
-    @GetMapping("/posts")
-    public PagedModel<EntityModel<Post>> getPosts(Pageable pageable, PagedResourcesAssembler<Post> assembler) {
-        return assembler.toModel(post.findAll(pageable));
-    }
+//    @GetMapping("/posts")
+//    public PagedModel<EntityModel<Post>> getPosts(Pageable pageable, PagedResourcesAssembler<Post> assembler) {
+//        return assembler.toModel(post.findAll(pageable));
+//    }
 
     @GetMapping("/posts")
     public Page<Post> getPosts(Pageable pageable) {
