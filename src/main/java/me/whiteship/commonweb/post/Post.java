@@ -7,7 +7,7 @@ import java.util.Date;
 public class Post {
 
     @Id
-    //@GeneratedValue
+    @GeneratedValue
     private Long id;
 
     private String title;
