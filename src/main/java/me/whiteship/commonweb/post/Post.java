@@ -3,7 +3,7 @@ package me.whiteship.commonweb.post;
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity
+@Entity(name = "Posts")
 
 public class Post {
 

@@ -11,7 +11,7 @@ public interface PostRepository extends JpaRepository<Post,Long> {
 
     List<Post> findByTitleStartsWith(String title);
 
-    @Query(value = "SELECT p FROM Post AS p WHERE p.title = :title")
+    @Query(value = "SELECT p FROM #{#entityName} AS p WHERE p.title = :title")
     List<Post> findByTitle(@Param("title")String title, Sort sort);
 }
 
