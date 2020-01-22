@@ -33,18 +33,12 @@ public class PostRepositoryTest {
         Post savedPost = postRepository.save(post);//Persist - id가 없기때
 
 
-        assertThat(entityManager.contains(post)).isTrue();
-        assertThat(entityManager.contains(savedPost)).isTrue();
-        assertThat(savedPost == post);
-
         Post postUpdate = new Post();
         postUpdate.setId(post.getId());
         postUpdate.setTitle("Hibernate");
         Post updatePost = postRepository.save(postUpdate);//merge id가 있어서 merge로 세팅이됨 /update quary가 발생하고 하이버네이트로 값을 업데이트한다.
 
-        assertThat(entityManager.contains(updatePost)).isTrue();
-        assertThat(entityManager.contains(postUpdate)).isFalse();
-        assertThat(updatePost == postUpdate);
+        updatePost.setTitle("hi");
 
         List<Post> all = postRepository.findAll();
         assertThat(all.size()).isEqualTo(1);
